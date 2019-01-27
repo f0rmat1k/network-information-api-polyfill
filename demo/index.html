@@ -1,0 +1,14 @@
+<!--<script src="../index.js"></script>-->
+<script src="file:///Users/antongrischenko/projects/network-information-api-polyfill/index.js"></script>
+<script>
+    console.log('!');
+    new NetworkInformationApiPolyfill({
+        ping: true
+    }).then(connection => {
+        console.log(connection.effectiveType);
+
+        connection.addEventListener('change', e => {
+            console.log(e);
+        })
+    });
+</script>
