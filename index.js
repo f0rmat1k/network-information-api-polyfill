@@ -6,9 +6,9 @@
 // saveData: false
     const DEFAULT_OPTIONS = {
         ping: true,
-        pingMaxTimeout: 3000,
-        pingFrequency: 4000,
-        pingUrl: 'http://network-information-api.surge.sh/1b.txt',
+        pingMaxTimeout: 5000,
+        pingFrequency: 6000,
+        pingUrl: `${location.protocol}//network-information-api.surge.sh/1b.txt`, // todo detect http
         eventsBeforeChange: 2
     };
 
@@ -68,22 +68,24 @@
 
             let statusObj = null;
 
-            if (latency <= 600) {
+            if (latency <= 1400) {
                 statusObj = {
                     effectiveType: '4g',
                     downlink: 1.55
                 };
-            } else if (latency <= 1000) {
+            } else if (latency <= 1400) {
                 statusObj = {
                     effectiveType: '3g',
                     downlink: 1
                 };
-            } else if (latency <= 2000) {
+            } else if (latency <= this.options.pingMaxTimeout) {
                 statusObj = {
                     effectiveType: '2g',
                     downlink: 0.45
                 };
             }
+
+            console.log(statusObj);
         }
 
         addEventListener() {
