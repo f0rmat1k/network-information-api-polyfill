@@ -1,14 +1,13 @@
 <!--<script src="../index.js"></script>-->
-<script src="../index.js"></script>
+<script src="../src/index.js"></script>
 <script>
-    console.log('!');
     new NetworkInformationApiPolyfill({
-        ping: true
+
     }).then(connection => {
-        console.log(connection.effectiveType);
+        console.log(connection);
 
         connection.addEventListener('change', e => {
-            console.log(e);
-        })
+            console.log('change', e);
+        });
     });
 </script>
