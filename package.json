@@ -1,6 +1,6 @@
 {
   "name": "network-information-api-polyfill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Network information api polyfill",
   "main": "dist/main.js",
   "scripts": {
