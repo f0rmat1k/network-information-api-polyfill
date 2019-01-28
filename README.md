@@ -40,18 +40,18 @@ new NetworkInformationApiPolyfill({
 
 ##### pingMaxTimeout
 Type: `number`  
-Default: 5000
+Default: `5000`
 
 Timeout of request. After this time, the network will be considered unavailable (navigator.connection.type === 'none).
   
 ##### pingFrequency
 Type: `number`  
-Default: 6000
+Default: `6000`
 
 A frequency of pinging.  
 
 ##### pingUrl
-Type: `string`
+Type: `string`  
 Default: `${location.protocol}//network-information-api.surge.sh/1b.txt` 
 
 An url, that will be pinged. It is strongly recommended to have your own address.
